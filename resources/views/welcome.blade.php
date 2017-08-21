@@ -51,7 +51,6 @@
 
             .title {
                 font-size: 84px;
-                font-weight: 600px;
             }
 
             .links > a {
@@ -71,24 +70,23 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
 
             <div class="content">
                 <div class="title m-b-md">
                     Instagram # game
                 </div>
+                <div class="row">
+                    <div class="links">
+                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('register') }}">Register</a>
+                </div>
+                </div>
 
 
             </div>
+        </div>
+        <div class="footer">
+        This web application is created by Rok Silič @ 2017
         </div>
     </body>
 </html>
