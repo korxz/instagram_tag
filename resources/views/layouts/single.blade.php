@@ -12,20 +12,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>
-            html, body {
-                background: red; /* For browsers that do not support gradients */
-                background: -webkit-linear-gradient(left,rgba(255,0,0,0),rgba(255,0,0,1)); /*Safari 5.1-6*/
-                background: -o-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); /*Opera 11.1-12*/
-                background: -moz-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); /*Fx 3.6-15*/
-                background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /*Standard*/
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-    </style>
 </head>
 <body>
     <div id="app">
@@ -43,7 +29,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'Instagram') }}
                     </a>
                 </div>
 
@@ -79,7 +65,10 @@
                                         </form>
                                     </li>
                                     <li>
-                                        <a href="#"> Edit profile </a>
+                                        <a href="{{ route('edituser', Auth::user()->id) }}"> Edit profile </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('friendsuser', Auth::user()->id) }}"> Friends </a>
                                     </li>
                                 </ul>
                             </li>

@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/edit/{id}', 'EditProfileController@index')->name('edituser');
+
+Route::get('/friends/{id}', 'FriendsUserController@index')->name('friendsuser');
